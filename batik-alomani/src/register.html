@@ -105,11 +105,11 @@
         <div class="register-box">
             <div class="register-title">Register</div>
             <form onsubmit="register(event)">
-                <input type="text" class="form-control" id="nama" placeholder="Masukkan Username">
-                <input type="email" class="form-control" id="email" placeholder="Masukkan Email">
-                <input type="text" class="form-control" id="notelp" placeholder="Masukkan No Telepon">
-                <input type="password" class="form-control" id="password" placeholder="Masukkan Password">
-                <input type="password" class="form-control" id="konfirmasi_password" placeholder="Ulangi Password">
+                <input type="text" class="form-control" id="nama" placeholder="Username">
+                <input type="email" class="form-control" id="email" placeholder="Email">
+                <input type="text" class="form-control" id="notelp" placeholder="No Telepon">
+                <input type="password" class="form-control" id="password" placeholder="Password">
+                <input type="password" class="form-control" id="konfirmasi_password" placeholder="Validasi Password">
                 <button type="submit" class="btn btn-register-main">DAFTAR</button>
             </form>
             <div class="register-links">
@@ -138,23 +138,17 @@
                 alert('Password dan konfirmasi password tidak cocok');
                 return;
             }
-            localStorage.setItem('isLoggedIn', 'true');
-            localStorage.setItem('username', nama);
+            // Simulate a successful registration
+            alert('Pendaftaran berhasil! Silakan masuk.');
             window.location.href = 'index.html';
         }
         function registerWithGoogle() {
-            localStorage.setItem('isLoggedIn', 'true');
-            localStorage.setItem('username', 'GoogleUser');
             window.location.href = 'index.html';
         }
         function registerWithFacebook() {
-            localStorage.setItem('isLoggedIn', 'true');
-            localStorage.setItem('username', 'FacebookUser');
             window.location.href = 'index.html';
         }
         function registerWithX() {
-            localStorage.setItem('isLoggedIn', 'true');
-            localStorage.setItem('username', 'XUser');
             window.location.href = 'index.html';
         }
     </script>

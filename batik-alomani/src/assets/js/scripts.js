@@ -4,6 +4,143 @@ function validateEmail(email) {
     return re.test(email);
 }
 
+// Data admin
+const adminCredentials = {
+    email: 'admin@admin.com',
+    password: 'adminini'
+};
+
+// Fungsi untuk validasi password admin
+function validateAdminPassword(password) {
+    const requirements = {
+        length: password.length >= 8,
+        letter: /[A-Za-z]/.test(password),
+        number: /[0-9]/.test(password),
+        special: /[@$!%*#?&]/.test(password)
+    };
+
+    // Update UI jika elemen ada
+    if (document.getElementById('length')) {
+        document.getElementById('length').classList.toggle('valid', requirements.length);
+        document.getElementById('length').classList.toggle('invalid', !requirements.length);
+    }
+    if (document.getElementById('letter')) {
+        document.getElementById('letter').classList.toggle('valid', requirements.letter);
+        document.getElementById('letter').classList.toggle('invalid', !requirements.letter);
+    }
+    if (document.getElementById('number')) {
+        document.getElementById('number').classList.toggle('valid', requirements.number);
+        document.getElementById('number').classList.toggle('invalid', !requirements.number);
+    }
+    if (document.getElementById('special')) {
+        document.getElementById('special').classList.toggle('valid', requirements.special);
+        document.getElementById('special').classList.toggle('invalid', !requirements.special);
+    }
+
+    return Object.values(requirements).every(req => req === true);
+}
+
+// Login utama untuk admin & user
+function login(e) {
+    e.preventDefault();
+    const email = document.getElementById('loginEmail').value;
+    const password = document.getElementById('loginPassword').value;
+    const errorAlert = document.getElementById('errorAlert');
+
+    if (!email || !password) {
+        errorAlert.style.display = 'block';
+        errorAlert.textContent = 'Email dan password harus diisi!';
+        return;
+    }
+
+    // Login admin
+    if (email === adminCredentials.email && password === adminCredentials.password) {
+        localStorage.setItem('isAdminLoggedIn', 'true');
+        localStorage.setItem('adminEmail', email);
+        window.location.href = 'admin-dashboard.html';
+        return;
+    }
+
+    // Login user biasa
+    localStorage.setItem('isLoggedIn', 'true');
+    localStorage.setItem('currentUser', email);
+    localStorage.setItem('username', email.split('@')[0]);
+    window.location.href = 'index.html';
+}
+
+// Logout admin
+function adminLogout() {
+    localStorage.removeItem('isAdminLoggedIn');
+    localStorage.removeItem('adminEmail');
+    window.location.href = 'login.html';
+}
+
+// Logout user
+function logout() {
+    localStorage.removeItem('isLoggedIn');
+    localStorage.removeItem('currentUser');
+    localStorage.removeItem('username');
+    window.location.href = 'login.html';
+}
+
+// Cek status login admin
+function checkAdminAuth() {
+    const isAdminLoggedIn = localStorage.getItem('isAdminLoggedIn') === 'true';
+    const adminEmail = localStorage.getItem('adminEmail');
+    if (window.location.pathname.includes('admin-dashboard.html') && !isAdminLoggedIn) {
+        window.location.href = 'login.html';
+        return false;
+    }
+    return isAdminLoggedIn && adminEmail === adminCredentials.email;
+}
+
+// Cek status login user & update UI
+function checkLoginStatus() {
+    const currentUser = localStorage.getItem('currentUser');
+    if (currentUser) {
+        const loginElements = document.querySelectorAll('.login-status');
+        loginElements.forEach(element => {
+            element.textContent = `Halo, ${currentUser.split('@')[0]}`;
+        });
+    }
+    if (checkAdminAuth()) {
+        const adminHeader = document.querySelector('.dashboard-header h2');
+        if (adminHeader) {
+            const adminEmail = localStorage.getItem('adminEmail');
+            adminHeader.textContent = `Selamat Datang, ${adminEmail.split('@')[0]}`;
+        }
+    }
+}
+
+document.addEventListener('DOMContentLoaded', checkLoginStatus);
+if (window.location.pathname.includes('admin-dashboard.html')) {
+    setInterval(checkAdminAuth, 300000);
+}
+
+// Login dengan Google (user biasa)
+function loginWithGoogle() {
+    const randomEmail = 'user' + Math.floor(Math.random() * 1000) + '@gmail.com';
+    localStorage.setItem('isLoggedIn', 'true');
+    localStorage.setItem('currentUser', randomEmail);
+    localStorage.setItem('username', randomEmail.split('@')[0]);
+    window.location.href = 'index.html';
+}
+
+// Toggle visibility password
+function togglePasswordVisibility(inputId, iconElement) {
+    const passwordInput = document.getElementById(inputId);
+    const icon = iconElement || document.querySelector(`#${inputId} + i`);
+    if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        icon.classList.remove('fa-eye');
+        icon.classList.add('fa-eye-slash');
+    } else {
+        passwordInput.type = 'password';
+        icon.classList.remove('fa-eye-slash');
+        icon.classList.add('fa-eye');
+    }
+}
+
 // Fungsi untuk registrasi
 function register(e) {
     e.preventDefault();
@@ -37,68 +174,3 @@ function register(e) {
     alert('Registrasi berhasil! Silakan login.');
     window.location.href = 'login.html';
 }
-
-// Fungsi untuk login
-function login(e) {
-    e.preventDefault();
-    
-    const email = document.getElementById('loginEmail').value;
-    const password = document.getElementById('loginPassword').value;
-    
-    // Validasi input dasar
-    if (!email || !password) {
-        alert('Email dan password harus diisi!');
-        return;
-    }
-    
-    // Set session langsung tanpa validasi
-    sessionStorage.setItem('currentUser', email);
-    alert('Login berhasil!');
-    window.location.href = 'index.html';
-}
-
-// Fungsi untuk logout
-function logout() {
-    sessionStorage.removeItem('currentUser');
-    sessionStorage.removeItem('userName');
-    alert('Logout berhasil!');
-    window.location.href = 'login.html';
-}
-
-// Fungsi untuk cek status login
-function checkLoginStatus() {
-    const currentUser = sessionStorage.getItem('currentUser');
-    const loginButtons = document.querySelectorAll('.login-btn');
-    const registerButtons = document.querySelectorAll('.register-btn');
-    const logoutButtons = document.querySelectorAll('.logout-btn');
-    const userInfo = document.querySelectorAll('.user-info');
-    
-    if (currentUser) {
-        // User sudah login
-        loginButtons.forEach(btn => btn.style.display = 'none');
-        registerButtons.forEach(btn => btn.style.display = 'none');
-        logoutButtons.forEach(btn => btn.style.display = 'inline-block');
-        userInfo.forEach(info => {
-            info.style.display = 'inline-block';
-            info.textContent = currentUser;
-        });
-    } else {
-        // User belum login
-        loginButtons.forEach(btn => btn.style.display = 'inline-block');
-        registerButtons.forEach(btn => btn.style.display = 'inline-block');
-        logoutButtons.forEach(btn => btn.style.display = 'none');
-        userInfo.forEach(info => info.style.display = 'none');
-    }
-}
-
-// Fungsi untuk login dengan Google
-function loginWithGoogle() {
-    // Simulasi login dengan Google
-    const randomEmail = 'user' + Math.floor(Math.random() * 1000) + '@gmail.com';
-    sessionStorage.setItem('currentUser', randomEmail);
-    alert('Login dengan Google berhasil!');
-    window.location.href = 'index.html';
-}
-
-// Jalankan cek status login saat halaman dimuat
-document.addEventListener('DOMContentLoaded', checkLoginStatus);
