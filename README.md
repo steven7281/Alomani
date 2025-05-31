@@ -81,11 +81,5 @@ batik-alomani/
 
 ---
 
-## 👤 Kontak & Kontribusi
-- Project by: [Tim Batik Alomani]
-- Email: admin@batikalomani.com
-- Saran, bug, dan kontribusi silakan pull request atau email.
-
----
 
 > **Batik Alomani** — Solusi modern untuk bisnis batik UMKM Indonesia. 
