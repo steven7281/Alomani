@@ -113,7 +113,7 @@
                 <button type="submit" class="btn btn-register-main">DAFTAR</button>
             </form>
             <div class="register-links">
-                Sudah Punya Akun ? <a href="login.html">Login</a>
+                Sudah Punya Akun ? <a href="login.php">Login</a>
             </div>
             <div class="or-divider">OR</div>
             <div class="social-login">
@@ -140,16 +140,16 @@
             }
             // Simulate a successful registration
             alert('Pendaftaran berhasil! Silakan masuk.');
-            window.location.href = 'index.html';
+            window.location.href = 'index.php';
         }
         function registerWithGoogle() {
-            window.location.href = 'index.html';
+            window.location.href = 'index.php';
         }
         function registerWithFacebook() {
-            window.location.href = 'index.html';
+            window.location.href = 'index.php';
         }
         function registerWithX() {
-            window.location.href = 'index.html';
+            window.location.href = 'index.php';
         }
     </script>
 </body>

@@ -1,3 +1,4 @@
+<?php include 'component/header.php'; ?>
 <!DOCTYPE html>
 <html lang="id">
 
@@ -147,60 +148,9 @@
 </head>
 
 <body>
-    <header>
-        <!-- Top Header -->
-        <div class="top-header">
-            <div class="container">
-                <div class="row align-items-center">
-                    <!-- Logo -->
-                    <div class="col-lg-2 col-md-3 col-12 logo-container">
-                        <a href="index.html">
-                            <img src="assets/images/logo.png" alt="Batik Alomani Logo" class="img-fluid">
-                        </a>
-                    </div>
-                    <!-- Search Bar -->
-                    <div class="col-lg-7 col-md-5 col-12">
-                        <div class="search-container">
-                            <input type="text" placeholder="Search">
-                            <button type="button">
-                                <i class="fas fa-search"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <!-- Navigation Icons -->
-                    <div class="col-lg-3 col-md-4 col-12">
-                        <div class="nav-icons">
-                            <a href="index.html">
-                                <i class="fas fa-home"></i>
-                            </a>
-                            <a href="keranjang.html">
-                                <i class="fas fa-shopping-cart"></i>
-                            </a>
-                            <a href="login.html" class="btn btn-masuk">MASUK</a>
-                            <a href="register.html" class="btn btn-daftar">DAFTAR</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Main Navigation -->
-        <nav class="main-nav">
-            <div class="container">
-                <ul class="nav">
-                    <li class="nav-item"><a class="nav-link" href="new.html">NEW Product</a></li>
-                    <li class="nav-item"><a class="nav-link" href="pria.html">Baju Pria</a></li>
-                    <li class="nav-item"><a class="nav-link" href="wanita.html">Baju Wanita</a></li>
-                    <li class="nav-item"><a class="nav-link" href="anak.html">Baju Anak</a></li>
-                    <li class="nav-item"><a class="nav-link" href="accessories.html">Accessories</a></li>
-                    <li class="nav-item"><a class="nav-link" href="dress.html">Dress</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
-
     <main class="container">
         <div class="breadcrumb">
-            <a href="keranjang.html" class="text-dark text-decoration-none">Keranjang</a> →
+            <a href="keranjang.php" class="text-dark text-decoration-none">Keranjang</a> →
             <span style="color: red;">Pembayaran</span> →
             <span>Selesai</span>
         </div>
@@ -281,49 +231,11 @@
                     <p>Rp559.000</p>
                 </div>
 
-                <button class="btn-payment" onclick="window.location.href='last.html'">PILIH PEMBAYARAN</button>
+                <button class="btn-payment" onclick="window.location.href='last.php'">PILIH PEMBAYARAN</button>
             </div>
         </div>
     </main>
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <h5>Batik Alomani</h5>
-                    <p>Fashion Berkualitas, Harga Bersahabat Tampil Stylish Setiap Hari!</p>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <h5>Kontak Kami</h5>
-                    <ul class="list-unstyled">
-                        <li><i class="fas fa-map-marker-alt me-2"></i> Jl. Tuktuk Sahur</li>
-                        <li><i class="fas fa-phone me-2"></i> +62 812 9962 382</li>
-                        <li><i class="fas fa-envelope me-2"></i> batikAlomani@gmail.com</li>
-                    </ul>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <h5>Ikuti Kami</h5>
-                    <div class="social-icons">
-                        <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="https://wa.me/628129962382" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                    </div>
-                </div>
-            </div>
-            <hr class="bg-white">
-            <div class="row py-3">
-                <div class="col-md-6 text-center text-md-start mb-2 mb-md-0">
-                    <p class="mb-0">&copy; 2025 Batik Alomani. All rights reserved.</p>
-                </div>
-                <div class="col-md-6">
-                    <ul class="list-unstyled d-flex justify-content-center justify-content-md-end mb-0 gap-3">
-                        <li><a href="#" class="text-white text-decoration-none">Privacy Policy</a></li>
-                        <li><a href="#" class="text-white text-decoration-none">Terms of Service</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </footer>
+<?php include 'component/footer.php'; ?>
 </body>
 
 </html>

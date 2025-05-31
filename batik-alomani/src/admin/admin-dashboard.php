@@ -97,7 +97,7 @@
             <!-- Sidebar -->
             <div class="col-md-3 col-lg-2 sidebar">
                 <div class="text-center mb-4">
-                    <img src="assets/images/logo.png" alt="Batik Alomani Logo" style="max-width: 150px;">
+                    <img src="../assets/images/logo.png" alt="Batik Alomani Logo" style="max-width: 150px;">
                 </div>
                 <nav class="nav flex-column">
                     <a class="nav-link active" href="#dashboard" onclick="showSection('dashboard')">
@@ -386,7 +386,7 @@
         function checkAuth() {
             const isAdminLoggedIn = localStorage.getItem('isAdminLoggedIn');
             if (!isAdminLoggedIn) {
-                window.location.href = 'login.html';
+                window.location.href = '../login.php';
                 return;
             }
         }
@@ -394,7 +394,7 @@
         // Handle logout
         function handleLogout() {
             localStorage.removeItem('isAdminLoggedIn');
-            window.location.href = 'login.html';
+            window.location.href = '../login.php';
         }
 
         // Navigasi tab menu admin

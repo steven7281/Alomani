@@ -57,7 +57,7 @@ function login(e) {
     if (email === adminCredentials.email && password === adminCredentials.password) {
         localStorage.setItem('isAdminLoggedIn', 'true');
         localStorage.setItem('adminEmail', email);
-        window.location.href = 'admin-dashboard.html';
+        window.location.href = 'admin/admin-dashboard.php';
         return;
     }
 
@@ -65,14 +65,14 @@ function login(e) {
     localStorage.setItem('isLoggedIn', 'true');
     localStorage.setItem('currentUser', email);
     localStorage.setItem('username', email.split('@')[0]);
-    window.location.href = 'index.html';
+    window.location.href = 'index.php';
 }
 
 // Logout admin
 function adminLogout() {
     localStorage.removeItem('isAdminLoggedIn');
     localStorage.removeItem('adminEmail');
-    window.location.href = 'login.html';
+    window.location.href = 'login.php';
 }
 
 // Logout user
@@ -80,7 +80,7 @@ function logout() {
     localStorage.removeItem('isLoggedIn');
     localStorage.removeItem('currentUser');
     localStorage.removeItem('username');
-    window.location.href = 'login.html';
+    window.location.href = 'login.php';
 }
 
 // Cek status login admin
@@ -88,7 +88,7 @@ function checkAdminAuth() {
     const isAdminLoggedIn = localStorage.getItem('isAdminLoggedIn') === 'true';
     const adminEmail = localStorage.getItem('adminEmail');
     if (window.location.pathname.includes('admin-dashboard.html') && !isAdminLoggedIn) {
-        window.location.href = 'login.html';
+        window.location.href = 'login.php';
         return false;
     }
     return isAdminLoggedIn && adminEmail === adminCredentials.email;
@@ -123,7 +123,7 @@ function loginWithGoogle() {
     localStorage.setItem('isLoggedIn', 'true');
     localStorage.setItem('currentUser', randomEmail);
     localStorage.setItem('username', randomEmail.split('@')[0]);
-    window.location.href = 'index.html';
+    window.location.href = 'index.php';
 }
 
 // Toggle visibility password
@@ -172,7 +172,7 @@ function register(e) {
     }
 
     alert('Registrasi berhasil! Silakan login.');
-    window.location.href = 'login.html';
+    window.location.href = 'login.php';
 }
 
 
