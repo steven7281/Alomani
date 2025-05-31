@@ -10,93 +10,82 @@
   <a href="#teknologi"><img src="https://img.shields.io/badge/Build-HTML%20%7C%20CSS%20%7C%20JS%20%7C%20Bootstrap-orange?style=flat-square"/></a>
 </p>
 
----
-
-Aplikasi web modern untuk penjualan produk batik, dengan tampilan responsif, navigasi konsisten, dan fitur autentikasi sederhana. Cocok untuk toko batik online, UMKM, atau showcase produk fashion tradisional.
+Sistem web modern untuk penjualan Batik Alomani, lengkap dengan dashboard admin, manajemen produk, pesanan, stok, laporan keuangan, live chat, dan tampilan responsif.
 
 ---
 
 ## ✨ Fitur Utama
-- Landing page modern dengan hero carousel & grid produk
-- Navigasi konsisten di seluruh halaman
-- Kategori produk (Pria, Wanita, Anak, Dress, Accessories, New Product)
-- Sistem login/register (localStorage) + login Google/Facebook/X (dummy)
-- Keranjang & halaman pembayaran
-- Desain full responsif (mobile & desktop)
-- Footer informatif di semua halaman
+- **Landing Page & Katalog Produk**: Kategori pria, wanita, dress, anak, accessories, dan produk baru.
+- **Keranjang & Checkout**: Proses belanja mudah, checkout, dan riwayat pesanan.
+- **Login User & Admin**: Satu form login, role user/admin, validasi email & password.
+- **Dashboard Admin**: Kelola pesanan, produk, stok, laporan, dan pengaturan admin.
+- **Live Chat**: Chat modern antara user & admin, tombol mengambang, bisa close.
+- **Tampilan Modern**: Desain card, shadow, border-radius, warna konsisten, responsif.
+- **Proteksi Akses**: Session & localStorage, hanya admin bisa akses dashboard admin.
 
 ---
 
-## 🗂️ Struktur Proyek
-
+## 🗂️ Struktur Folder
 ```
 batik-alomani/
-│
+├── db_batik_alomani.sql         # Struktur database MySQL
 ├── src/
-│   ├── index.html
-│   ├── login.html
-│   ├── register.html
-│   ├── keranjang.html
-│   ├── bayar.html
-│   ├── detail.html
-│   ├── pria.html
-│   ├── wanita.html
-│   ├── anak.html
-│   ├── dress.html
-│   ├── accessories.html
-│   ├── new.html
+│   ├── index.php               # Landing page
+│   ├── login.php               # Login user & admin
+│   ├── register.php            # Registrasi user
+│   ├── keranjang.php           # Keranjang belanja
+│   ├── bayar.php               # Checkout & pembayaran
+│   ├── detail.php              # Detail produk
+│   ├── pria.php, wanita.php, dress.php, anak.php, accessories.php, new.php
+│   ├── admin/
+│   │   └── admin-dashboard.php # Dashboard admin
+│   ├── component/
+│   │   ├── header.php, footer.php
 │   └── assets/
-│       ├── css/
-│       │   ├── styles.css
-│       │   ├── nav-style.css
-│       │   └── login.css
-│       ├── js/
-│       │   └── scripts.js
-│       └── images/
-│           └── (logo, produk, background, dsb)
-└── README.md
+│       ├── images/             # Logo & gambar produk
+│       ├── css/                # styles.css, login.css, nav-style.css
+│       └── js/                 # scripts.js
+└── package.json                # (Opsional, tidak digunakan)
 ```
 
 ---
 
-## 🚀 Cara Menjalankan
-
-1. **Clone repository ini**
-   ```bash
-   git clone https://github.com/steven7281/Front-end_BatikAlomani.git
-   ```
-2. **Buka folder `batik-alomani/src/`**
-3. **Jalankan dengan Live Server** (atau buka `index.html` langsung di browser)
-
-> Tidak memerlukan backend/server, semua data dummy dan autentikasi menggunakan localStorage.
+## ⚙️ Cara Setup & Jalankan
+1. **Clone repo & copy ke server lokal (Laragon/XAMPP/WAMP)**
+2. **Import database**: 
+   - Buka phpMyAdmin
+   - Buat database `batik_alomani`
+   - Import `db_batik_alomani.sql`
+3. **Jalankan di browser**: 
+   - Akses `http://localhost/batik-alomani/src/`
+4. **Login Admin**:  
+   - Email: `admin@admin.com`  
+   - Password: `adminini`
 
 ---
 
 ## 🛠️ Teknologi
-
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow?logo=javascript&logoColor=black)
-![Bootstrap](https://img.shields.io/badge/Bootstrap-5-blueviolet?logo=bootstrap&logoColor=white)
-![FontAwesome](https://img.shields.io/badge/FontAwesome-6.0-blue?logo=fontawesome&logoColor=white)
+- **Frontend**: HTML5, CSS3, Bootstrap 5, JavaScript (modular, modern)
+- **Backend**: PHP (tanpa framework)
+- **Database**: MySQL/MariaDB
+- **Assets**: Logo, gambar produk, ikon FontAwesome & Bootstrap Icons
 
 ---
 
-## 🔑 Informasi Login Admin
-Gunakan kredensial berikut untuk login sebagai admin:
-
-Email: admin@admin.com
-
-Password: adminini
-
----
-
-## 📦 Catatan Pengembangan
-- Semua halaman sudah mengimpor `nav-style.css` untuk konsistensi navigasi
-- Kategori dan produk menggunakan grid responsif
-- Gambar dan aset dapat diganti sesuai kebutuhan di folder `assets/images/`
+## 🗄️ Struktur Database (Ringkas)
+- **users**: id, nama, email, password, role, created_at
+- **products**: id, nama, kategori, harga, stok, gambar, deskripsi
+- **orders**: id, user_id, total, status, created_at
+- **order_items**: id, order_id, product_id, qty, harga
+- **stok_log**: id, product_id, perubahan, keterangan, created_at
 
 ---
 
-## 📄 Lisensi
-Aplikasi ini dikembangkan untuk kebutuhan showcase, pembelajaran, dan pengembangan pribadi. Silakan modifikasi sesuai kebutuhan.
+## 👤 Kontak & Kontribusi
+- Project by: [Tim Batik Alomani]
+- Email: admin@batikalomani.com
+- Saran, bug, dan kontribusi silakan pull request atau email.
+
+---
+
+> **Batik Alomani** — Solusi modern untuk bisnis batik UMKM Indonesia. 
