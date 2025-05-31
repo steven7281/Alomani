@@ -1,7 +1,7 @@
 # 🦚 Batik Alomani - Aplikasi E-Commerce Batik Modern
 
 <p align="center">
-  <img src="src/assets/images/logo.png" alt="Batik Alomani Screenshot" width="400"/>
+  <img src="ALOMANI/batik-alomani/src/assets/images/logo.png" alt="Batik Alomani Screenshot" width="400"/>
 </p>
 
 <p align="center">
@@ -63,7 +63,7 @@ batik-alomani/
 
 1. **Clone repository ini**
    ```bash
-   git clone https://github.com/steven7281/Front-end_Batik_Alomani.git
+   git clone https://github.com/steven7281/Front-end_BatikAlomani.git
    ```
 2. **Buka folder `batik-alomani/src/`**
 3. **Jalankan dengan Live Server** (atau buka `index.html` langsung di browser)

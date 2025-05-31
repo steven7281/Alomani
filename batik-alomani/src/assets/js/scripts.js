@@ -174,3 +174,14 @@ function register(e) {
     alert('Registrasi berhasil! Silakan login.');
     window.location.href = 'login.html';
 }
+
+
+// Fungsi untuk live chat
+    function toggleChat() {
+        const chatBox = document.getElementById('liveChatBox');
+        if (chatBox.style.display === 'none' || chatBox.style.display === '') {
+            chatBox.style.display = 'flex';
+        } else {
+            chatBox.style.display = 'none';
+        }
+    }
