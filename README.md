@@ -86,6 +86,7 @@ batik-alomani/
 Gunakan kredensial berikut untuk login sebagai admin:
 
 Email: admin@admin.com
+
 Password: adminini
 
 ---
