@@ -82,7 +82,7 @@ batik-alomani/
 
 ---
 
-##🔑 Informasi Login Admin
+## 🔑 Informasi Login Admin
 Gunakan kredensial berikut untuk login sebagai admin:
 
 Email: admin@admin.com
