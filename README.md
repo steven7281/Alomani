@@ -81,7 +81,8 @@ batik-alomani/
 
 ---
 
-## 📖 Tujuan Dibuat Untuk Menuntaskan Projek Matkul Pemograman Web
+## 📖 Tujuan Dibuat
+**Untuk Menuntaskan Projek Matkul Pemograman Web**
 
 ---
 > **Batik Alomani** — Solusi modern untuk bisnis batik UMKM Indonesia. 
