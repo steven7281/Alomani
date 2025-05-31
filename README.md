@@ -82,6 +82,14 @@ batik-alomani/
 
 ---
 
+##🔑 Informasi Login Admin
+Gunakan kredensial berikut untuk login sebagai admin:
+
+Email: admin@admin.com
+Password: adminini
+
+---
+
 ## 📦 Catatan Pengembangan
 - Semua halaman sudah mengimpor `nav-style.css` untuk konsistensi navigasi
 - Kategori dan produk menggunakan grid responsif
