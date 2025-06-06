@@ -85,4 +85,4 @@ batik-alomani/
 **Untuk Menuntaskan Projek Matkul Pemograman Web**
 
 ---
-> **Batik Alomani** — Solusi modern untuk bisnis batik UMKM Indonesia. 
+> **Batik Alomani** — 
