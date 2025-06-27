@@ -60,7 +60,7 @@ batik-alomani/
    - Akses `http://localhost/batik-alomani/src/`
 4. **Login Admin**:  
    - Email: `admin@admin.com`  
-   - Password: `adminini`
+   - Password: `12345`
 
 ---
 
