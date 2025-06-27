@@ -1,7 +1,7 @@
 # 🦚 Batik Alomani - Aplikasi E-Commerce Batik Modern
 
 <p align="center">
-  <img src="batik-alomani/src/assets/images/logo.png" alt="Batik_Alomani_Screenshot" width="400"/>
+  <img src="klllNEW/src/assets/images/logo.png" alt="Batik_Alomani_Screenshot" width="400"/>
 </p>
 
 <p align="center">
