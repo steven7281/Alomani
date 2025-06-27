@@ -82,7 +82,7 @@ batik-alomani/
 ---
 
 ## 📖 Tujuan Dibuat
-**Untuk Menuntaskan Projek Matkul Pemograman Web**
+**Untuk Menuntaskan UAS dan Projek Matkul Pemograman Web**
 
 ---
 > **Batik Alomani** — 
