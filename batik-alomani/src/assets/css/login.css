@@ -1,0 +1,64 @@
+body,
+html {
+  height: 100%;
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: url("../images/login.jpg") no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
+}
+
+.container {
+  max-width: 400px;
+  margin: auto;
+  margin-top: 10%;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+h3.text-center {
+  color: #fff;
+  margin-bottom: 30px;
+}
+
+.form-control {
+  background-color: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: #fff;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 30px;
+}
+
+.form-control::placeholder {
+  color: #ddd;
+}
+
+.btn-primary {
+  background-color: #ff5e78;
+  border: none;
+  padding: 12px;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #ff4160;
+}
+
+.text-center a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.text-center a:hover {
+  color: #ff5e78;
+  text-decoration: none;
+}
+
+p.text-center {
+  margin-top: 20px;
+}
