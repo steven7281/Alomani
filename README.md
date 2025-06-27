@@ -55,7 +55,7 @@ batik-alomani/
 2. **Import database**: 
    - Buka phpMyAdmin
    - Buat database `batik_alomani`
-   - Import `db_batik_alomani.sql`
+   - Import `batik.sql`
 3. **Jalankan di browser**: 
    - Akses `http://localhost/batik-alomani/src/`
 4. **Login Admin**:  
@@ -69,15 +69,6 @@ batik-alomani/
 - **Backend**: PHP (tanpa framework)
 - **Database**: MySQL/MariaDB
 - **Assets**: Logo, gambar produk, ikon FontAwesome & Bootstrap Icons
-
----
-
-## 🗄️ Struktur Database (Ringkas)
-- **users**: id, nama, email, password, role, created_at
-- **products**: id, nama, kategori, harga, stok, gambar, deskripsi
-- **orders**: id, user_id, total, status, created_at
-- **order_items**: id, order_id, product_id, qty, harga
-- **stok_log**: id, product_id, perubahan, keterangan, created_at
 
 ---
 
